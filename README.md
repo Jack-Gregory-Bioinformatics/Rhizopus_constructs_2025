@@ -229,18 +229,98 @@ Shared N-terminal motif discovered:
 
 ---
 
-## 9. Standardise N-terminal (and/or C-terminal) codon blocks
-```
+## 9. Standardise conserved terminal codon blocks across FP designs
+
+After codon optimisation, fluorescent proteins that share the same N- or C-terminal amino-acid motif may still use different synonymous codons. This can make primer design less efficient, because constructs with the same conserved peptide sequence may not have identical DNA sequence at the corresponding terminus.
+
+The script `standardise_FP_terminals.py` fixes this by copying the codon block for a conserved terminal motif from a chosen “master” GenBank design into all other compatible FP designs.
+
+This is useful for designing shared primers across multiple constructs.
+
+### What the script does
+
+`standardise_FP_terminals.py`:
+
+* scans codon-optimised FP GenBank files in a designs directory
+* identifies constructs whose CDS starts and/or ends with a specified amino-acid motif
+* extracts the codon block encoding that motif from a chosen master FP
+* replaces the equivalent terminal codon block in matching constructs
+* preserves the encoded amino-acid sequence
+* writes standardised GenBank files to a new output directory
+
+Only constructs that actually contain the specified motif at the relevant terminus are modified. Constructs without the motif are copied to the output directory unchanged.
+
+### Basic usage
+
+```bash
 chmod 755 scripts/standardise_FP_terminals.py
 python scripts/standardise_FP_terminals.py --help
 ```
 
-Example (standardise N-terminus using mNeonGreen as master):
-```
-python scripts/standardise_FP_terminals.py   --designs-dir designs   --out-dir designs_Nstd   --mode N   --N-master-gbk designs/mNeonGreenRd_2025-11-26.gbk   --N-motif MVSKGEE
+### Standardise an N-terminal motif
+
+For example, the FP alignment identified a shared N-terminal motif:
+
+```text
+MVSKGEE
 ```
 
-Result: all selected FPs now share identical first 21 nt → single forward primer.
+To standardise this N-terminal codon block across compatible FP designs, using mNeonGreen as the master sequence:
+
+```bash
+python scripts/standardise_FP_terminals.py \
+  --designs-dir designs \
+  --out-dir designs_Nstd \
+  --mode N \
+  --N-master-gbk designs/mNeonGreenRd_2025-11-26.gbk \
+  --N-motif MVSKGEE
+```
+
+This creates a new directory:
+
+```text
+designs_Nstd/
+```
+
+Modified constructs are written with a `_std.gbk` suffix. Constructs that do not contain the specified N-terminal motif are copied unchanged.
+
+The result is that all compatible FPs share the same first 21 nt encoding `MVSKGEE`, allowing a shared forward primer to be designed.
+
+### Standardise a C-terminal motif
+
+The same approach can be used for conserved C-terminal motifs:
+
+```bash
+python scripts/standardise_FP_terminals.py \
+  --designs-dir designs \
+  --out-dir designs_Cstd \
+  --mode C \
+  --C-master-gbk designs/example_master_FP.gbk \
+  --C-motif EXAMPLEMOTIF
+```
+
+Replace `example_master_FP.gbk` and `EXAMPLEMOTIF` with the appropriate master construct and conserved C-terminal amino-acid motif.
+
+### Standardise both N- and C-terminal motifs
+
+N- and C-terminal motifs can also be standardised in a single run:
+
+```bash
+python scripts/standardise_FP_terminals.py \
+  --designs-dir designs \
+  --out-dir designs_NCstd \
+  --mode both \
+  --N-master-gbk designs/mNeonGreenRd_2025-11-26.gbk \
+  --N-motif MVSKGEE \
+  --C-master-gbk designs/example_master_FP.gbk \
+  --C-motif EXAMPLEMOTIF
+```
+
+### Important notes
+
+The script assumes that each GenBank file contains a CDS feature on the positive strand. It removes any stale `/translation` qualifier after modifying the CDS, so downstream tools can recalculate the translation from the edited nucleotide sequence.
+
+This step should be run after codon optimisation and after identifying conserved terminal motifs from the FP protein alignment.
 
 ---
 
