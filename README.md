@@ -16,9 +16,22 @@ Original work funded by the Wellcome Trust Bioimaging award.
 # Contents
 
 ## `data/`
-Input/reference data, including:
 
-- Protein AA sequences for all fluorescent proteins (from fpbase.org)
+Input and derived data used by the codon-optimisation workflow.
+
+Included:
+
+* Protein amino-acid sequences for fluorescent proteins from FPbase
+* Approved derived codon-usage resources, where suitable for release
+
+Not included:
+
+* Unpublished/private *Rhizopus delemar* genome FASTA files
+* Unpublished/private genome annotation GFF3 files
+* Raw RNA-seq FASTQ files
+* Alignment outputs, BAM files, HISAT2 indices, and featureCounts outputs
+
+Users should provide their own local copies of any private reference files required for rebuilding the codon-usage table.
 
 ### Fluorescent proteins included
 
@@ -65,9 +78,7 @@ Key Python/Bash scripts for:
 
 ## 1. Clone and prepare directory
 ```
-git clone https://github.com/ewallace/Emergomyces_constructs_2025.git
-cp -r Emergomyces_constructs_2025 Rhizopus_constructs_2025
-cd Rhizopus_constructs_2025
+git clone https://github.com/Jack-Gregory-Bioinformatics/Rhizopus_constructs_2025.git
 ```
 
 ---
@@ -85,57 +96,109 @@ pip install dnachisel==3.2.13 dna-features-viewer==3.1.3 geneblocks==1.2.3 flame
 
 ---
 
-## 3. Build genome index & extract CDS
-```
-mamba create -n histat2_gffread bioconda::hisat2 bioconda::gffread
-mamba activate histat2_gffread
+## 3. Prepare private reference files
+
+This workflow requires a local *Rhizopus delemar* genome FASTA and genome annotation GFF3 file.
+
+These reference files are not included in this repository because they are unpublished/private. Users should provide their own local copies and set paths to them before running the RNA-seq and codon-usage workflow.
+
+For example:
+
+```bash
+export RDELEMAR_GENOME_FASTA="/path/to/private/Rhizopus_delemar_genome.fasta"
+export RDELEMAR_ANNOTATION_GFF3="/path/to/private/Rhizopus_delemar_annotation.gff3"
+export RDELEMAR_INDEX_PREFIX="/path/to/private/hisat2_index/Rhizopus_delemar_index"
 ```
 
-Build index:
-```
-hisat2-build alignment/Rdel_genome/Rdel_AB3477.fasta alignment/Rdel_genome/Rdel_hisat2_index
+The commands below assume these environment variables have been set.
+
+---
+
+## 4. Build genome index and extract CDS
+
+Create the HISAT2/gffread environment:
+
+```bash
+mamba create -n hisat2_gffread bioconda::hisat2 bioconda::gffread
+mamba activate hisat2_gffread
 ```
 
-Extract all CDS:
+Build a HISAT2 index from the local genome FASTA:
+
+```bash
+hisat2-build "$RDELEMAR_GENOME_FASTA" "$RDELEMAR_INDEX_PREFIX"
 ```
-gffread alignment/Rdel_genome/Rdel_AB3477_EC_removed_variants_removed.gff3   -g alignment/Rdel_genome/Rdel_AB3477.fasta   -x data/Rd_all_CDS.fa
+
+Extract CDS sequences from the local genome and annotation:
+
+```bash
+gffread "$RDELEMAR_ANNOTATION_GFF3" \
+  -g "$RDELEMAR_GENOME_FASTA" \
+  -x data/Rd_all_CDS.fa
 ```
 
 ---
 
-## 4. Align RNA-seq & generate gene counts
+## 5. Align RNA-seq and generate gene counts
+
+The RNA-seq FASTQ files used to generate the codon-usage table are not included in this repository.
+
+Before running the alignment script, update the input paths in:
+
+```bash
+scripts/align_and_count.sh
 ```
-chmod +x src/align_and_count.sh
+
+or set local/private paths as required by your compute environment.
+
+Then run:
+
+```bash
+chmod +x scripts/align_and_count.sh
 mamba install bioconda::samtools
 mamba install bioconda::subread
-./src/align_and_count.sh
+./scripts/align_and_count.sh
 ```
+
+This generates alignment and count outputs locally. These outputs are not intended to be committed to the repository.
 
 ---
 
-## 5. Extract ribosomal genes
-```
+## 6. Extract ribosomal genes and build Rhizopus codon-usage table
+
+Extract ribosomal gene IDs from the local/private annotation file:
+
+```bash
 chmod +x scripts/extract_ribosomal_genes_from_gff3.py
-./scripts/extract_ribosomal_genes_from_gff3.py   --gff alignment/Rdel_genome/Rdel_AB3477_EC_removed_variants_removed.gff3   --out data/Rd_ribosomal_gene_ids.txt
+
+./scripts/extract_ribosomal_genes_from_gff3.py \
+  --gff "$RDELEMAR_ANNOTATION_GFF3" \
+  --out data/Rd_ribosomal_gene_ids.txt
 ```
 
----
-
-## 6. Build Rhizopus codon-usage table
 Install pandas:
-```
+
+```bash
 mamba activate codons2025
 mamba install anaconda::pandas
 ```
 
-Run:
-```
-./scripts/build_rhizopus_codon_table.py   --counts alignment/results/counts/Rd_featureCounts.txt   --cds-fasta data/Rd_all_CDS.fa   --ribosomal-ids data/Rd_ribosomal_gene_ids.txt   --top-percent 5.0
+Build the codon-usage table:
+
+```bash
+./scripts/build_rhizopus_codon_table.py \
+  --counts alignment/results/counts/Rd_featureCounts.txt \
+  --cds-fasta data/Rd_all_CDS.fa \
+  --ribosomal-ids data/Rd_ribosomal_gene_ids.txt \
+  --top-percent 5.0
 ```
 
 Outputs:
-- `data/Rhizopus_delemar_top5pct_plus_ribo_CDS.fa`
-- `data/Rd_codon_freqs_by_AA.json`
+
+```text
+data/Rhizopus_delemar_top5pct_plus_ribo_CDS.fa
+data/Rd_codon_freqs_by_AA.json
+```
 
 ---
 

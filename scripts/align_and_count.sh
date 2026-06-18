@@ -1,20 +1,30 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# mamba activate histat2_gffread
+# Activate your environment before running, for example:
+# mamba activate hisat2_gffread
 
-# Adjust these to your directory structure
-GENOME_INDEX="/lustre/home/jbg209/Research_Project-T117972/Active_Projects/32_FP_R_delemar/Rhizopus_constructs_2025/alignment/Rdel_genome/Rdel_hisat2_index"
-GFF="/lustre/home/jbg209/Research_Project-T117972/Active_Projects/32_FP_R_delemar/Rhizopus_constructs_2025/alignment/Rdel_genome/Rdel_AB3477_EC_removed_variants_removed.gff3"
-OUTDIR_ALIGN="/lustre/home/jbg209/Research_Project-T117972/Active_Projects/32_FP_R_delemar/Rhizopus_constructs_2025/alignment/results"
-OUTDIR_COUNTS="/lustre/home/jbg209/Research_Project-T117972/Active_Projects/32_FP_R_delemar/Rhizopus_constructs_2025/alignment/results/counts"
+# Resolve paths relative to the repository root
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+# Input/reference files
+GENOME_INDEX="${REPO_DIR}/alignment/Rdel_genome/Rdel_hisat2_index"
+GFF="${REPO_DIR}/alignment/Rdel_genome/Rdel_AB3477_EC_removed_variants_removed.gff3"
+
+# Output directories
+OUTDIR_ALIGN="${REPO_DIR}/alignment/results"
+OUTDIR_COUNTS="${REPO_DIR}/alignment/results/counts"
+
 THREADS=8
 
 mkdir -p "$OUTDIR_ALIGN" "$OUTDIR_COUNTS"
 
+# Raw read files
+# Update these paths to point to your local or HPC raw data location.
+RAW_DATA_DIR="/path/to/raw_data/R_del_RNA-seq"
 
-R1="/lustre/home/jbg209/Research_Project-T117972/raw_data/09_LR_Mucorales/R_del_RNA-seq/combined_wt_all_1.fastq"
-R2="/lustre/home/jbg209/Research_Project-T117972/raw_data/09_LR_Mucorales/R_del_RNA-seq/combined_wt_all_2.fastq"
+R1="${RAW_DATA_DIR}/combined_wt_all_1.fastq"
+R2="${RAW_DATA_DIR}/combined_wt_all_2.fastq"
 
 BAM="${OUTDIR_ALIGN}/Rdel.sorted.bam"
 
