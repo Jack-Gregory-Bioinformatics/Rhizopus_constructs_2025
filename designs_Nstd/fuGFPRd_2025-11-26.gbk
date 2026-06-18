@@ -1,0 +1,25 @@
+LOCUS       fuGFPRd                  720 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   fuGFPRd
+VERSION     fuGFPRd
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..720
+                     /gene="fuGFP"
+ORIGIN
+        1 atggtttctt ctggcgaaga tattttctca ggtttggttc ccatcttgat cgagcttgag
+       61 ggtgatgtta acggtcatcg tttctctgtc agaggtgaag gttatggtga tgcttctaac
+      121 ggcaagttgg agatcaagtt catttgcact acaggtagat tgcctgtccc ttggccaact
+      181 ttggtcacaa ctttgtccta cggtgtccaa tgtttcgcta agtatcctga acacatgcgt
+      241 caaaacgact tcttcaagtc tgctatgccc gatggttatg tgcaggagcg tacaatctct
+      301 tttaaggaag atggcactta caagacccgc gctgaagtta aatttgaagg tgaagccctt
+      361 gtcaaccgta tcgatcttaa gggtttggag tttaaggagg acggtaacat tctcggacac
+      421 aagctcgaat attcctttaa ctcccactac gtctacatca ccgccgacaa aaatcgtaac
+      481 ggtcttgagg ctcaatttcg tattcgtcat aacgttgacg atggttctgt ccagcttgct
+      541 gatcactatc aacaaaatac tcctatcgga gagggacctg tgttattacc cgagcagcac
+      601 taccttacca ctaattcagt tttgtccaaa gacccacaag aacgccgtga tcatatggtt
+      661 cttgttgaat ttgtgaccgc cgcaggtttg agtctcggta tggatgaatt atataagagt
+//

@@ -1,0 +1,26 @@
+LOCUS       mCardinalRd              732 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   mCardinalRd
+VERSION     mCardinalRd
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..732
+                     /gene="mCardinal"
+ORIGIN
+        1 atggtttcta aaggtgaaga attgatcaag gaaaacatgc acatgaagct ctacatggaa
+       61 ggcacagtca acaatcacca cttcaaatgt actaccgaag gtgaaggtaa gccctatgaa
+      121 ggaactcaaa cacaacgcat taaggttgtg gaaggtggtc ctcttccttt tgctttcgac
+      181 atccttgcta cttgcttcat gtatggatcc aagaccttca tcaaccatac tcaaggcatt
+      241 cccgatttct tcaaacagtc ttttcccgag ggttttactt gggaacgtgt tacaacttat
+      301 gaagatggcg gtgttcttac cgtcactcaa gacacttctt tgcaggacgg ttgcttgatt
+      361 tacaacgtca agttacgcgg cgtgaatttt ccctctaatg gtcccgttat gcagaagaaa
+      421 acccttggtt gggaagccac aactgaaact ctttatcctg ccgatggtgg tttggaagga
+      481 cgttgtgata tggcattgaa gctcgttggt ggtggtcatt tacactgcaa cttaaagacc
+      541 acctaccgca gtaagaagcc tgccaagaac ctcaaaatgc caggtgtcta tttcgtcgat
+      601 cgtcgtttgg aacgtattaa ggaggctgac aatgaaacct acgtcgaaca acatgaagtt
+      661 gctgttgctc gttactgtga tcttccttca aagctcggtc acaagttgaa cggtatggat
+      721 gaattgtata ag
+//

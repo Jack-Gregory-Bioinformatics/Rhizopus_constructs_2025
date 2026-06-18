@@ -1,0 +1,25 @@
+LOCUS       eqFP650Rd                702 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   eqFP650Rd
+VERSION     eqFP650Rd
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..702
+                     /gene="eqFP650"
+ORIGIN
+        1 atgggtgaag attccgagtt gatctccgag aacatgcata tgaagttgta catggagggt
+       61 acagtgaatg gtcaccactt taaatgcact tctgaaggtg aaggtaagcc ttacgagggt
+      121 actcaaacag ctaagattaa ggtcgttgaa ggtggacctt taccctttgc cttcgatatt
+      181 ctcgccacct cttttatgta cggctctaag actttcatca accacaccca gggtattcca
+      241 gattttttca agcagtcctt tcctgagggc tttacctggg aacgcattac tacttatgaa
+      301 gatggaggag tccttacagc tacacaagat acctctctcc aaaatggttg cctcatctac
+      361 aacgtgaaaa tcaacggtgt taacttcccc tccaatggtc ctgttatgca aaaaaagact
+      421 ttgggttggg aagcctcaac tgaaatgctt tatcctgctg atagtggttt acgtggccat
+      481 tctcaaatgg cacttaagtt ggtcggtggt ggttatctcc actgctcatt aaagactacc
+      541 taccgttcta agaagcccgc taagaacttg aaaatgcctg gtttctactt cgttgaccgt
+      601 aagttggaac gtatcaagga agctgacaaa gaaacctacg tcgaacaaca cgaaatggcc
+      661 gttgctagat attgcgacct tcctagtaaa cttggtcatt ct
+//

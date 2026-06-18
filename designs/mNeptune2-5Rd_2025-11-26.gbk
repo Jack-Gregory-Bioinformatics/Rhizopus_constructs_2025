@@ -1,0 +1,26 @@
+LOCUS       mNeptune2-5Rd            732 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   mNeptune2-5Rd
+VERSION     mNeptune2-5Rd
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..732
+                     /gene="mNeptune2-5"
+ORIGIN
+        1 atggtttcaa agggtgagga gttaattaag gagaacatgc acaccaagct ctacatggag
+       61 ggtacagtga acaatcatca cttcaaatgc actcacgaag gtgaaggtaa gccttatgaa
+      121 ggtacacaga ctaatcgcat caaggtcgtt gaaggtggac ctcttccttt cgcctttgat
+      181 atcctcgcaa catgctttat gtacggcagt aagacattca tcaaccacac tcaaggcatt
+      241 cctgactttt tcaagcaatc cttccctgaa ggctttactt gggaacgtgt tactacttat
+      301 gaggatggtg gtgtccttac cgtgacccaa gatacctcct tgcaagatgg ctgcttgatc
+      361 tacaatgtca agttgcgtgg tgttaacttt ccctctaacg gtcccgtcat gcaaaaaaag
+      421 accttgggtt gggaagctag taccgaaact ctttatcctg ccgacggagg tttagaaggt
+      481 agatgtgaca tggctttgaa gttggtcggt ggtggtcact tacactgtaa ccttaagact
+      541 acctaccgct ctaagaaacc cgctaagaac ctcaaaatgc ctggtgttta cttcgttgat
+      601 cgtcgtttgg aacgcattaa ggaagccgat aacgagactt atgtcgaaca acatgaagtt
+      661 gctgttgctc gttactgtga ccttccatct aagttgggcc acaagctcaa tggaatggat
+      721 gagctttaca aa
+//

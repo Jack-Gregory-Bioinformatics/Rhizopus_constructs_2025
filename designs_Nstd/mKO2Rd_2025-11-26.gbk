@@ -1,0 +1,24 @@
+LOCUS       mKO2Rd                   654 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   mKO2Rd
+VERSION     mKO2Rd
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..654
+                     /gene="mKO2"
+ORIGIN
+        1 atggttagtg tgatcaagcc tgagatgaag atgcgctatt acatggacgg ttctgtcaat
+       61 ggtcatgagt ttaccatcga aggtgaaggt actggtcgtc cttatgaagg ccaccaagaa
+      121 atgactctcc gtgttactat ggctgaaggt ggtcctatgc ctttcgcttt tgatcttgtt
+      181 tctcacgtct tttgctacgg acatcgtgtc tttactaagt atcccgagga gatccctgac
+      241 tatttcaagc aagccttccc cgagggtctt agttgggaac gttccttaga atttgaagat
+      301 ggcggttctg catcagtttc tgctcacatt tctctcagag gtaacacctt ctaccacaag
+      361 tccaaattca ccggagttaa tttccctgcc gacggtccta ttatgcaaaa ccaatctgtc
+      421 gattgggaac cctctactga aaagattaca gcttccgatg gtgtcttgaa aggtgacgtg
+      481 acaatgtact tgaagttgga gggtggtgga aaccacaaat gtcagatgaa aactacctac
+      541 aaggccgcca aggaaatttt ggaaatgcca ggtgatcact atatcggcca tagacttgtg
+      601 cgtaagacag aaggtaacat taccgaacaa gtcgaagatg ctgttgctca ttca
+//

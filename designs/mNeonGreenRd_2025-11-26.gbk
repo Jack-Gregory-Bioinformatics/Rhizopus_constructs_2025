@@ -1,0 +1,25 @@
+LOCUS       mNeonGreenRd             708 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   mNeonGreenRd
+VERSION     mNeonGreenRd
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..708
+                     /gene="mNeonGreen"
+ORIGIN
+        1 atggtttcta aaggtgaaga agataatatg gcttccctcc ccgctaccca cgaattgcac
+       61 attttcggtt ctatcaacgg agtcgatttc gatatggttg gccaaggtac aggtaatccc
+      121 aacgatggtt acgaagagtt gaaccttaag tccactaagg gcgatttaca gttttctcct
+      181 tggatcctcg ttcctcatat cggttacggt tttcatcagt atttgcccta tcccgatggt
+      241 atgagtcctt ttcaagctgc tatggtcgat ggttcaggtt atcaggtgca tcgtactatg
+      301 caatttgagg acggtgctag tcttactgtt aactaccgtt acacctacga aggatctcac
+      361 attaagggtg aagcccaagt caaaggtact ggttttcctg ctgacggtcc agttatgact
+      421 aattctctta ctgccgcaga ctggtgtcgt tccaagaaaa cttaccctaa cgacaagaca
+      481 atcatctcca ccttcaagtg gtcatatacc acaggaaacg gtaagcgtta ccgttctaca
+      541 gctagaacta cctatacctt cgcaaagcct atggccgcta actacctcaa gaatcaacct
+      601 atgtatgtgt tccgcaagac tgagttgaag cactctaaga ccgaactcaa cttcaaagaa
+      661 tggcaaaagg ccttcactga tgtcatgggc atggatgaac tttataaa
+//

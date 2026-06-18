@@ -1,0 +1,29 @@
+LOCUS       miRFP680Rd               948 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   miRFP680Rd
+VERSION     miRFP680Rd
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..948
+                     /gene="miRFP680"
+ORIGIN
+        1 atggccgaag gttctgtcgc cagacaacct gatcttttga cctgtgatga tgaacccatc
+       61 cacattcctg gcgcaattca acctcatggt cttttgctcg ctcttgcagc cgatatgacc
+      121 attgttgctg gttcagacaa tctccctgaa cttactggtc ttgctattgg cgctttgatt
+      181 ggtcgttcag ctgctgacgt tttcgattct gaaacacaca atcgccttac cattgcctta
+      241 gccgaacctg gtgctgctgt tggtgcacct attaccgtcg gttttaccat gcgtaaagac
+      301 gctggtttta ttggttcttg gcaccgtcat gaccaactca tcttccttga actcgaacct
+      361 cctcaaagag atgtcgctga gcctcaagcc ttttttcgtc gtactaatag tgctatccgt
+      421 cgtttgcagg ctgctgaaac attagaatcc gcttgtgccg ctgccgctca agaagtccgt
+      481 aagattactg gattcgaccg tgtcatgatc tatcgtttcg ccagtgattt ctctggtgag
+      541 gttatcgctg aagatagatg tgccgaggtc gaaagtaagt taggtttgca ctaccctgca
+      601 tctacagttc ctgctcaagc tcgtcgcttg tataccatca accccgtccg tatcattcct
+      661 gatatcaact accgtcccgt tcccgtcaca cccgatttaa accctgtgac tggacgccca
+      721 attgacttgt ccttcgccat cttgcgttct gtttccccct gtcatcttga atttatgcgt
+      781 aacatcggca tgcacggtac tatgtctatc tccattcttc gtggtgaaag attgtgggga
+      841 ctcatcgtgt gccaccatcg tactccatac tatgtggatt tggatggtag acaagcctgt
+      901 aagcgcgttg ctgaacgttt ggctactcag attggtgtta tggaagaa
+//

@@ -1,0 +1,25 @@
+LOCUS       mCherry-XLRd             708 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   mCherry-XLRd
+VERSION     mCherry-XLRd
+KEYWORDS    .
+SOURCE      
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     CDS             1..708
+                     /gene="mCherry-XL"
+ORIGIN
+        1 atggtttcta aaggtgaaga agacaacatg gccatcatta aggagtttat gcgctttaag
+       61 gtccacatgg aaggctccgt gaatggtcat gaatttgaaa ttgaaggcga aggtgaaggt
+      121 cgtccttatg aaggcactca aaccgcaaag ttaaaggtta ccaagggtgg tcctttacct
+      181 ttcgcttggg atattctttc cccccaattt atgtatggtt ccaaggccta tgtcaagcac
+      241 cccgctgaca ttcctgatta cttgaagttg tctttccctg agggctttaa atgggaacgt
+      301 gtgatgaatt tcgaagatgg tggtgttgtt actgttaccc aggatagttc tctccaagac
+      361 ggtgagttca tctacaaagt caaacttcgt ggaaccaact tcccatcaga tggacctgtc
+      421 atgcagaaga aaactatggg ctctgaagct agttctgaac gtatgtatcc tgaagatggc
+      481 gctttgaagg gcgaagtcaa gtatcgcctt aagttgaagg atggaggtca ctacgatgcc
+      541 gaagttaaga ctacctacaa agccaaaaag cccgtccaac tccccggtgc ttacaacgtt
+      601 aaccgtaagt tggacatcac ttcacacaac gaggactaca caatcgttga gcaatatgaa
+      661 agagctgagg gtcgtcattc tacaggaggt atggatgaac tttataag
+//
