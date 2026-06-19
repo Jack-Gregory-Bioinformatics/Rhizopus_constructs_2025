@@ -22,7 +22,7 @@ Input and derived data used by the codon-optimisation workflow.
 Included:
 
 * Protein amino-acid sequences for fluorescent proteins from FPbase
-* Approved derived codon-usage resources, where suitable for release
+* Approved derived codon-usage resources
 
 Not included:
 
