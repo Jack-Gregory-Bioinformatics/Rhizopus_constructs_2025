@@ -22,7 +22,7 @@ Input and derived data used by the codon-optimisation workflow.
 Included:
 
 * Protein amino-acid sequences for fluorescent proteins from FPbase
-* Approved derived codon-usage resources
+* An in-house derived *Rhizopus delemar* codon-usage table generated for this project
 
 Not included:
 
