@@ -1,5 +1,5 @@
 # Rhizopus_constructs_2025
-Codon optimisation workflow for fluorescent proteins in **Rhizopus delemar**, based on and adapted from *Emergomyces_constructs_2025* (Edward Wallace, 2025).
+Codon optimisation workflow for fluorescent proteins in **Rhizopus delemar**, based on and adapted from *Emergomyces_constructs_2025* (Edward Wallace, 2025) (https://github.com/ewallace/Emergomyces_constructs_2025).
 
 This repository contains:
 
